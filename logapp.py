@@ -43,7 +43,7 @@ df = pd.DataFrame(entries)
 df.index.name = "Log ID"
 
 # Create the app
-st.title("Insulin Pump Log Entries")
+st.title("Log Entries")
 
 # Add radio button for Log ID filter
 log_id_filter = st.radio("Filter by Log ID:", ('All Logs', 'Specific Log ID'))

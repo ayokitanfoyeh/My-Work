@@ -75,13 +75,33 @@ else:
     latest_date = df['Timestamp'].max().date()
 
     # Filter by date
-    start_date = st.date_input("Filter by Start Date", value=earliest_date)
-    end_date = st.date_input("Filter by End Date", value=latest_date)
+    start_date = st.date_input("Filter by Start Date", value=earliest_date, max_value=latest_date)
+    end_date = st.date_input("Filter by End Date", value=latest_date, min_value=start_date)
 
-    start_date = pd.Timestamp(datetime.combine(start_date, datetime.min.time()))
-    end_date = pd.Timestamp(datetime.combine(end_date, datetime.max.time()))
+    # Filter by time using sliders for hours and minutes
+    start_hour = st.slider("Start Time - Hour", 0, 23, 0)
+    start_minute = st.slider("Start Time - Minute", 0, 45, 0, step=15)
 
-    filtered_df = filtered_df[(filtered_df['Timestamp'] >= start_date) & (filtered_df['Timestamp'] <= end_date)]
+    # Create and display the selected start time
+    start_time = datetime.strptime(f"{start_hour}:{start_minute}", "%H:%M").time()
+    st.write(f"Selected Start Time: {start_time.strftime('%H:%M')}")
+    st.write("")  # Add a blank line for spacing
+    st.write("")  # Add another blank line for more spacing
+
+    end_hour = st.slider("End Time - Hour", start_hour, 23, 23)
+    end_minute = st.slider("End Time - Minute", 0, 45, 45, step=15)
+
+    # Create and display the selected end time
+    end_time = datetime.strptime(f"{end_hour}:{end_minute}", "%H:%M").time()
+    st.write(f"Selected End Time: {end_time.strftime('%H:%M')}")
+    st.write("")  # Add a blank line for spacing
+    st.write("")  # Add another blank line for more spacing
+
+    # Combine date and time for filtering
+    start_datetime = pd.Timestamp(datetime.combine(start_date, start_time))
+    end_datetime = pd.Timestamp(datetime.combine(end_date, end_time))
+
+    filtered_df = filtered_df[(filtered_df['Timestamp'] >= start_datetime) & (filtered_df['Timestamp'] <= end_datetime)]
 
     # Display the filtered DataFrame
     st.write("Log Entries:")

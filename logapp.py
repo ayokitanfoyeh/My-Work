@@ -5,11 +5,11 @@ from datetime import datetime
 
 # Define the events and possible values
 events_values = {
-    'Basal Rate': {'unit': 'Units/Hour', 'min': 0.5, 'max': 2.0},
-    'Blood Glucose': {'unit': 'mg/dL', 'min': 70, 'max': 180},
-    'Bolus': {'unit': 'Units', 'min': 1, 'max': 10},
-    'Carbohydrates': {'unit': 'Grams', 'min': 0, 'max': 100},
-    'Low Battery': {'unit': '%', 'min': 0, 'max': 100}
+    'Insulin Basal Rate': {'unit': 'Units/Hour', 'min': 0.5, 'max': 2.0},
+    'Blood Glucose Level': {'unit': 'mg/dL', 'min': 70, 'max': 180},
+    'Insulin Bolus Dose': {'unit': 'Units', 'min': 1, 'max': 10},
+    'Carb Intake': {'unit': 'Grams', 'min': 0, 'max': 100},
+    'Battery Level': {'unit': '%', 'min': 0, 'max': 100}
 }
 
 # Generate 1000 rows of entries
@@ -27,7 +27,7 @@ for timestamp in timestamps:
     unit = events_values[event]['unit']
     
     if event == 'Low Battery':
-        new_value = 0.1
+        new_value = 10
     else:
         min_value = events_values[event]['min']
         max_value = events_values[event]['max']

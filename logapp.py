@@ -3,7 +3,7 @@ import pandas as pd
 import random
 from datetime import datetime
 
-# Define the events and possible values
+# Define the events and possible values with more descriptive names
 events_values = {
     'Insulin Basal Rate': {'unit': 'Units/Hour', 'min': 0.5, 'max': 2.0},
     'Blood Glucose Level': {'unit': 'mg/dL', 'min': 70, 'max': 180},
@@ -18,15 +18,15 @@ entries = []
 
 for timestamp in timestamps:
     if random.random() < 0.9:
-        event = 'Blood Glucose'
+        event = 'Blood Glucose Level'
     elif random.random() < 0.05:
-        event = 'Bolus'
+        event = 'Insulin Bolus Dose'
     else:
         event = random.choice(list(events_values.keys()))
     
     unit = events_values[event]['unit']
     
-    if event == 'Low Battery':
+    if event == 'Battery Level':
         new_value = 10
     else:
         min_value = events_values[event]['min']
@@ -69,4 +69,4 @@ filtered_df = filtered_df[(filtered_df['Timestamp'] >= start_date) & (filtered_d
 
 # Display the filtered DataFrame
 st.write("Log Entries:")
-st.write(filtered_df)
+st.dataframe(filtered_df)

@@ -6,7 +6,7 @@
 
 - 👨‍💻 All of my projects are available at [https://github.com/ayokitanfoyeh/My-Work](https://github.com/ayokitanfoyeh/My-Work)
 
-- 💬 Ask me about **my time working as a data analyst at the UN**
+- 💬 Ask me about **my time working as a data analyst at the UN & RBC**
 
 - 📫 How to reach me **kolowofoyeku@gmail.com**
 

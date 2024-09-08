@@ -1,6 +1,6 @@
 <h1 align="center">Hi 👋, I'm Kitan</h1>
 <h3 align="center">A passionate data analyst who loves Python.</h3>
-<img align="right" alt="Coding" width="400" src="https://www.analyticsinsight.net/wp-content/uploads/2021/07/Animating-Data-VisualisationsBringing-Analytics-to-Life.jpg">
+<img align="right" alt="Coding" width="400" src="https://i.pinimg.com/originals/fc/71/63/fc71635c7f1b09ed30413f59bb749582.gif">
 
 - 🌱 I’m currently learning **Microsoft Azure**
 

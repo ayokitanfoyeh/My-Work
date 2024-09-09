@@ -90,4 +90,4 @@ FROM customers;
 
 ALTER TABLE customers DROP COLUMN FULL_NAME;
 
--- test
+

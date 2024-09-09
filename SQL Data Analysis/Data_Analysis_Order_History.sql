@@ -1,4 +1,4 @@
-giSELECT * FROM customers;
+SELECT * FROM customers;
 SELECT * FROM stores;
 SELECT * FROM products;
 SELECT * FROM orders;

@@ -1,4 +1,4 @@
-SELECT * FROM customers;
+giSELECT * FROM customers;
 SELECT * FROM stores;
 SELECT * FROM products;
 SELECT * FROM orders;
@@ -90,4 +90,4 @@ FROM customers;
 
 ALTER TABLE customers DROP COLUMN FULL_NAME;
 
-
+-- test

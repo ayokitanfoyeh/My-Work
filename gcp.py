@@ -61,6 +61,5 @@ try:
 
 finally:
     # Close the connector
-    session.close()
     connector.close()
 # %%

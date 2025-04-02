@@ -21,8 +21,7 @@ DB_USER = access_secret_version("kitans-first-project", "DB_USER")
 DB_PASS = access_secret_version("kitans-first-project", "DB_PASS")
 
 # initialize parameters
-INSTANCE_CONNECTION_NAME = f"kitans-first-project:us-central1:kitandatabase" # i.e demo-project:us-central1:demo-instance
-print(f"Your instance connection name is: {INSTANCE_CONNECTION_NAME}")
+INSTANCE_CONNECTION_NAME = f"kitans-first-project:us-central1:kitandatabase" 
 DB_NAME = "kitan1data"
 
 # initialize Connector object
@@ -44,13 +43,9 @@ engine = sqlalchemy.create_engine(
     "mssql+pytds://",
     creator=getconn,
 )
-#%%
-# Create a session
-Session = sessionmaker(bind=engine)
-session = Session()
 
 # Execute a SELECT query and print the results
-query = text("SELECT * FROM Employees")  # Replace with your table name
+query = text("SELECT * FROM Employees")  
 
 try:
     # Execute the query using a connection
@@ -65,7 +60,7 @@ try:
             print(row)
 
 finally:
-    # Close the session and connector
+    # Close the connector
     session.close()
     connector.close()
 # %%

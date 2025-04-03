@@ -1,11 +1,7 @@
-
 #%%
 from google.cloud import secretmanager
-import sys
 from google.cloud.sql.connector import Connector
 import sqlalchemy
-from sqlalchemy import Column, Float, Integer, String, Table
-from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql import text
 
 # Initialize the Secret Manager client
